@@ -308,6 +308,9 @@
         <div class="sidebar-card-label">Languages</div>
         <p><strong>English</strong> — Fluent &nbsp;|&nbsp; <strong>Haitian Creole</strong> — Conversational</p>
       </div>
+      <div class="sidebar-card" style="display:flex; align-items:center; justify-content:center; padding: 20px;">
+        <img src="Endicott College Crest.webp" alt="Endicott College" style="width:100%; max-width:200px; object-fit:contain;">
+      </div>
     </div>
   </div>
 </section>
@@ -406,7 +409,7 @@
         <h3>SolarIQ: Intelligent Solar Insights</h3>
         <div class="pdet"><strong>Goal</strong>Real-time sensor system measuring temperature and light intensity to study factors affecting solar panel efficiency.</div>
         <div class="pdet"><strong>How It Works</strong>Built a dual-sensor circuit using a photoresistor and thermistor, captured analog voltage data through an NI myDAQ, and processed it in LabVIEW using the Beta Parameter equation to display real-time temperature readings in °C and °F. Co-developed with Hunter Boucher.</div>
-        <div class="pout">Proved out the full process — simulate, build, test, and debug. Producing a traffic light that ran exactly as programmed from day one.</div>
+        <div class="pout">Delivered a fully functional real-time dashboard displaying live temperature and light readings, validated against reference measurements.</div>
       </div>
     </div>
 
@@ -453,7 +456,7 @@
         <h3>Traffic Light Circuit</h3>
         <div class="pdet"><strong>Goal</strong>Simulate a real traffic light with accurate LED timing using Arduino and breadboard.</div>
         <div class="pdet"><strong>What I Did</strong>Designed the full circuit, wrote Arduino timing code, debugged resistor placements, validated in Tinkercad before the physical build.</div>
-        <div class="pout">Smooth, correctly-timed traffic light transitions — first full hardware + code integration project.</div>
+        <div class="pout">Took the project from Tinkercad simulation to physical breadboard — achieving smooth, accurate traffic light transitions and gaining hands-on experience bridging code and hardware.</div>
       </div>
     </div>
 
@@ -478,7 +481,6 @@
         <button class="g-btn g-next" onclick="gNext('cg')" style="opacity:1;pointer-events:all">&#8594;</button>
         <div class="g-dots" id="cgd"></div>
       </div>
-      <!-- Thumbnails — show first image of each slide as preview -->
       <div class="cap-thumbs" id="cgt">
         <div class="cap-thumb on" onclick="gGoTo('cg',0)"><img src="Squirrel Box - Dimensions .png" alt="Dimensions"></div>
         <div class="cap-thumb" onclick="gGoTo('cg',1)"><img src="Squirrel Box - Assembly.jpg" alt="Assembly"></div>
@@ -495,10 +497,10 @@
         <div class="cap-spec"><div class="cap-spec-lbl">GPS</div><div class="cap-spec-val">GT-U7 Module</div></div>
         <div class="cap-spec"><div class="cap-spec-lbl">Temp / Humidity</div><div class="cap-spec-val">DHT22 Sensor</div></div>
         <div class="cap-spec"><div class="cap-spec-lbl">Solar Panel</div><div class="cap-spec-val">FUTUREZEN 6W</div></div>
-        <div class="cap-spec"><div class="cap-spec-lbl">Battery Pack</div><div class="cap-spec-val">2× 18650 Li-ion</div></div>
+        <div class="cap-spec"><div class="cap-spec-lbl">Battery Pack</div><div class="cap-spec-val">2x 18650 Li-ion</div></div>
         <div class="cap-spec"><div class="cap-spec-lbl">Solar Harvest</div><div class="cap-spec-val">6.60 Wh / 5 hrs</div></div>
       </div>
-      <p>SPowered by a solar panel and TP4056 charging circuit, the system runs fully off-grid. The next phase is adding motion and distance sensors and taking the system into the field.</p>
+      <p>Powered by a solar panel and TP4056 charging circuit, the system runs fully off-grid. The next phase is adding motion and distance sensors and taking the system into the field.</p>
       <div class="cap-tags">
         <span class="ctag">ESP32S3</span><span class="ctag">Solar</span><span class="ctag">GPS</span>
         <span class="ctag">DHT22</span><span class="ctag">PIR Motion</span><span class="ctag">Arduino</span><span class="ctag">IoT</span>
@@ -520,7 +522,7 @@
         <div class="exp-company">Endicott College · Beverly, MA</div>
         <ul class="exp-bullets">
           <li>Assisted students and faculty with 3D printers, laser cutters, and electronics for academic and personal projects.</li>
-          <li>Performed root cause analysis to diagnose hardware, wiring, and mechanical faults in 3D printers — resolved crashes and poor print quality through hardware-level debugging.</li>
+          <li>Performed root cause analysis to diagnose hardware, wiring, and mechanical faults in 3D printers. Resolved crashes and poor print quality through hardware-level debugging.</li>
           <li>Provided technical support for digital fabrication, electronics, and prototyping projects.</li>
           <li>Maintained tools, materials, and workstations for a safe, efficient working environment.</li>
         </ul>
@@ -629,7 +631,6 @@
 </footer>
 
 <script>
-/* ── GALLERY ENGINE ── */
 const GS = {};
 function gInit(id) {
   const slides = document.querySelectorAll('#' + id + 's .gallery-slide');
@@ -660,7 +661,6 @@ function gPrev(id) { gGoTo(id, GS[id].cur - 1); }
 function gNext(id) { gGoTo(id, GS[id].cur + 1); }
 ['g1','g2','g3','g4','g5','g6','cg'].forEach(gInit);
 
-/* ── ACTIVE NAV ── */
 const allSections = document.querySelectorAll('section[id], div[id="hero"]');
 const navAs = document.querySelectorAll('.nav-links a');
 const navObs = new IntersectionObserver(entries => {
@@ -676,7 +676,6 @@ const navObs = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 allSections.forEach(s => navObs.observe(s));
 
-/* ── REVEAL ON SCROLL ── */
 const revObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.07 });
