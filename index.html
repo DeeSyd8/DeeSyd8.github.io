@@ -55,8 +55,8 @@
     .btn-ghost { padding: 14px 32px; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); font-family: 'Roboto Mono', monospace; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 3px; transition: border-color 0.2s, color 0.2s, transform 0.15s; }
     .btn-ghost:hover { border-color: var(--blue-light); color: var(--blue-light); transform: translateY(-2px); }
     .hero-right { background: var(--off-white); display: flex; flex-direction: column; }
-    .hero-photo-wrap { flex: 1; position: relative; overflow: hidden; min-height: 400px; }
-    .hero-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .hero-photo-wrap { flex: 1; position: relative; overflow: hidden; min-height: 400px; max-height: 520px; }
+    .hero-photo-wrap img { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; background: var(--gray-light); }
     .hero-photo-placeholder { position: absolute; inset: 0; background: var(--gray-light); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
     .hero-photo-placeholder .ph-circle { width: 80px; height: 80px; border-radius: 50%; background: var(--gray-mid); display: flex; align-items: center; justify-content: center; font-size: 32px; }
     .hero-photo-placeholder .ph-label { font-family: 'Roboto Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); }
@@ -96,10 +96,10 @@
     /* GALLERY */
     .gallery { position: relative; overflow: hidden; background: var(--gray-light); }
     .project-card:not(.featured) .gallery { aspect-ratio: 16/9; }
-    .project-card.featured .gallery { min-height: 300px; }
+    .project-card.featured .gallery { min-height: 380px; }
     .gallery-slides { display: flex; height: 100%; transition: transform 0.38s ease; will-change: transform; }
     .gallery-slide { min-width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--gray-light); overflow: hidden; }
-    .gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gallery-slide img { width: 100%; height: 100%; object-fit: contain; display: block; background: var(--gray-light); }
     .slide-ph { display: flex; flex-direction: column; align-items: center; gap: 8px; }
     .slide-ph-icon { font-size: 32px; opacity: 0.35; }
     .slide-ph-text { font-family: 'Roboto Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); }
