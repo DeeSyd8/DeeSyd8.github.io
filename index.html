@@ -11,7 +11,7 @@
       --navy:#1a2744; --navy-mid:#243460; --blue:#2e6db4; --blue-light:#5b9bd5;
       --sky:#ddeeff; --red:#c0392b; --red-light:#e74c3c;
       --white:#ffffff; --off-white:#f7f9fc; --gray-light:#eef1f6;
-      --gray-mid:#b0bac9; --gray:#6b7a99; --text:#2c3347;
+      --gray-mid:#6b7a99; --gray:#3a4560; --text:#1e2533;
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Lato', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; }
@@ -46,9 +46,9 @@
     h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; font-size: clamp(3.2rem,6vw,5.5rem); line-height: 1.0; color: var(--white); letter-spacing: 1px; text-transform: uppercase; }
     h1 em { color: var(--blue-light); font-style: normal; }
     .hero-rule { width: 60px; height: 4px; background: var(--red); margin: 28px 0; }
-    .hero-desc { font-size: 17px; line-height: 1.85; color: rgba(255,255,255,0.75); font-weight: 300; max-width: 400px; }
+    .hero-desc { font-size: 17px; line-height: 1.85; color: rgba(255,255,255,0.92); font-weight: 400; max-width: 400px; }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
-    .pill { padding: 7px 15px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); font-family: 'Roboto Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.8); border-radius: 2px; }
+    .pill { padding: 7px 15px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); font-family: 'Roboto Mono', monospace; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.95); border-radius: 2px; }
     .hero-cta { margin-top: 44px; display: flex; gap: 14px; flex-wrap: wrap; }
     .btn-red { padding: 14px 32px; background: var(--red); color: var(--white); font-family: 'Roboto Mono', monospace; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 3px; transition: background 0.2s, transform 0.15s; font-weight: 500; }
     .btn-red:hover { background: var(--red-light); transform: translateY(-2px); }
@@ -81,10 +81,10 @@
     .quote-block { border-left: 3px solid var(--red); padding-left: 20px; margin: 24px 0; font-size: 17px; font-style: italic; color: var(--navy); line-height: 1.8; font-weight: 400; }
     .sidebar-card { background: var(--navy); padding: 22px; margin-bottom: 12px; border-radius: 4px; }
     .sidebar-card-label { font-family: 'Roboto Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 12px; }
-    .sidebar-card p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.75); font-weight: 400; }
+    .sidebar-card p { font-size: 15px; line-height: 1.7; color: rgba(255,255,255,0.92); font-weight: 400; }
     .sidebar-card p strong { color: var(--white); font-weight: 700; }
     .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-    .skill-tag { padding: 5px 11px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); font-size: 13px; color: rgba(255,255,255,0.75); border-radius: 2px; }
+    .skill-tag { padding: 5px 11px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); font-size: 13px; color: rgba(255,255,255,0.92); border-radius: 2px; }
 
     /* PROJECTS */
     #projects { background: var(--off-white); }
@@ -137,12 +137,12 @@
     .cap-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .cap-thumb .th-ph { font-size: 16px; opacity: 0.3; }
     .cap-content h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: 16px; line-height: 1.1; }
-    .cap-content p { font-size: 16px; color: rgba(255,255,255,0.75); line-height: 1.9; font-weight: 400; margin-bottom: 14px; }
+    .cap-content p { font-size: 16px; color: rgba(255,255,255,0.92); line-height: 1.9; font-weight: 400; margin-bottom: 14px; }
     .cap-content p strong { color: var(--white); font-weight: 700; }
     .cap-specs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 16px 0; }
-    .cap-spec { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 12px 14px; }
-    .cap-spec-lbl { font-family: 'Roboto Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 4px; }
-    .cap-spec-val { font-size: 15px; color: var(--white); font-weight: 700; }
+    .cap-spec { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 12px 14px; }
+    .cap-spec-lbl { font-family: 'Roboto Mono', monospace; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #7fbfea; margin-bottom: 4px; }
+    .cap-spec-val { font-size: 15px; color: #ffffff; font-weight: 700; }
     .cap-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 10px; }
     .ctag { padding: 5px 12px; background: rgba(46,109,180,0.2); border: 1px solid rgba(91,155,213,0.3); font-family: 'Roboto Mono', monospace; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue-light); border-radius: 2px; }
     .status-live { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: rgba(192,57,43,0.15); border: 1px solid rgba(192,57,43,0.3); font-family: 'Roboto Mono', monospace; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #e87c74; border-radius: 3px; }
