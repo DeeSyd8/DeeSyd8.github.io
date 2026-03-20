@@ -98,12 +98,12 @@
     .project-card:not(.featured) .gallery { aspect-ratio: 16/9; }
     .project-card.featured .gallery { min-height: 300px; }
     .gallery-slides { display: flex; height: 100%; transition: transform 0.38s ease; will-change: transform; }
-    .gallery-slide { min-width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--gray-light); }
+    .gallery-slide { min-width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: var(--gray-light); overflow: hidden; }
     .gallery-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
     .slide-ph { display: flex; flex-direction: column; align-items: center; gap: 8px; }
     .slide-ph-icon { font-size: 32px; opacity: 0.35; }
     .slide-ph-text { font-family: 'Roboto Mono', monospace; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); }
-    .g-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(26,39,68,0.72); color: white; border: none; cursor: pointer; padding: 10px 13px; font-size: 16px; border-radius: 2px; transition: background 0.2s; z-index: 5; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
+    .g-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(26,39,68,0.72); color: white; border: none; cursor: pointer; padding: 10px 13px; font-size: 16px; border-radius: 2px; z-index: 5; opacity: 0; pointer-events: none; transition: opacity 0.2s, background 0.2s; }
     .gallery:hover .g-btn { opacity: 1; pointer-events: all; }
     .g-btn:hover { background: rgba(26,39,68,0.95); }
     .g-prev { left: 8px; } .g-next { right: 8px; }
@@ -132,10 +132,9 @@
     .cap-main .gallery-slides { height: 100%; }
     .cap-main .g-btn { opacity: 1; pointer-events: all; }
     .cap-thumbs { display: flex; gap: 8px; }
-    .cap-thumb { flex: 1; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: border-color 0.2s; background: rgba(255,255,255,0.05); display: flex; align-items: center; justify-content: center; }
+    .cap-thumb { flex: 1; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; border: 2px solid transparent; cursor: pointer; transition: border-color 0.2s; background: rgba(255,255,255,0.05); }
     .cap-thumb.on { border-color: var(--blue-light); }
     .cap-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .cap-thumb .th-ph { font-size: 16px; opacity: 0.3; }
     .cap-content h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 2rem; text-transform: uppercase; letter-spacing: 1px; color: var(--white); margin-bottom: 16px; line-height: 1.1; }
     .cap-content p { font-size: 16px; color: rgba(255,255,255,0.92); line-height: 1.9; font-weight: 400; margin-bottom: 14px; }
     .cap-content p strong { color: var(--white); font-weight: 700; }
@@ -293,15 +292,16 @@
         <div class="skill-tags">
           <span class="skill-tag">MATLAB</span><span class="skill-tag">LabVIEW</span><span class="skill-tag">OnShape (CAD)</span>
           <span class="skill-tag">Arduino</span><span class="skill-tag">ROS 2</span><span class="skill-tag">Python</span>
-          <span class="skill-tag">Tinkercad</span><span class="skill-tag">MS Word / PowerPoint</span><span class="skill-tag">VS Code</span> <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Tinkercad</span><span class="skill-tag">MS Word / PowerPoint</span>
+          <span class="skill-tag">VS Code</span><span class="skill-tag">GitHub</span>
         </div>
       </div>
       <div class="sidebar-card">
-        <div class="sidebar-card-label">Lab & Fabrication</div>
+        <div class="sidebar-card-label">Lab &amp; Fabrication</div>
         <div class="skill-tags">
           <span class="skill-tag">3D Printing</span><span class="skill-tag">Laser Cutting</span><span class="skill-tag">Soldering</span>
-          <span class="skill-tag">MATLAB</span><span class="skill-tag">Technical Writing</span><span class="skill-tag">MSET</span>
-          <span class="skill-tag">Instrumentation</span><span class="skill-tag">Test Procedures</span><span class="skill-tag">Part Drawings</span>
+          <span class="skill-tag">Technical Writing</span><span class="skill-tag">Instrumentation</span>
+          <span class="skill-tag">Test Procedures</span><span class="skill-tag">Part Drawings</span>
         </div>
       </div>
       <div class="sidebar-card">
@@ -322,11 +322,11 @@
     <div class="project-card featured reveal">
       <div class="gallery" id="g1">
         <div class="gallery-slides" id="g1s">
-          <img src="Dynamics Image.png">
-          <img src="Dynmaics Similation Model.gif">
-          <img src="Dynamics Code Image.png">
-          <img src="Dynamics Model Image.jpg">
-          <img src="Dynamics Parts Image.png">
+          <div class="gallery-slide"><img src="Dynamics Image.png" alt="Dynamics"></div>
+          <div class="gallery-slide"><img src="Dynmaics Similation Model.gif" alt="Simulation"></div>
+          <div class="gallery-slide"><img src="Dynamics Code Image.png" alt="MATLAB Code"></div>
+          <div class="gallery-slide"><img src="Dynamics Model Image.jpg" alt="Physical Model"></div>
+          <div class="gallery-slide"><img src="Dynamics Parts Image.png" alt="Parts"></div>
         </div>
         <button class="g-btn g-prev" onclick="gPrev('g1')">&#8592;</button>
         <button class="g-btn g-next" onclick="gNext('g1')">&#8594;</button>
@@ -368,11 +368,11 @@
     <div class="project-card reveal">
       <div class="gallery" id="g3">
         <div class="gallery-slides" id="g3s">
-          <img src="Door Handle.png">
-          <img src="Door Handle Cad.png">
-          <img src="Door Handle Cad Effects.png">
-          <img src="Door Handle Cad Edits.png">
-          <img src="Door Handle Cad Edit Effects.png">
+          <div class="gallery-slide"><img src="Door Handle.png" alt="Door Handle"></div>
+          <div class="gallery-slide"><img src="Door Handle Cad.png" alt="CAD Model"></div>
+          <div class="gallery-slide"><img src="Door Handle Cad Effects.png" alt="Stress Analysis"></div>
+          <div class="gallery-slide"><img src="Door Handle Cad Edits.png" alt="Redesign"></div>
+          <div class="gallery-slide"><img src="Door Handle Cad Edit Effects.png" alt="Updated Stress"></div>
         </div>
         <button class="g-btn g-prev" onclick="gPrev('g3')">&#8592;</button>
         <button class="g-btn g-next" onclick="gNext('g3')">&#8594;</button>
@@ -383,7 +383,7 @@
         <div class="project-tags"><span class="ptag">Mech. Design</span><span class="ptag">FEA</span><span class="ptag">OnShape</span></div>
         <h3>Door Handle Failure Analysis</h3>
         <div class="pdet"><strong>Goal</strong>Design a door handle in OnShape, apply bearing loads, run Von Mises stress FEA, then redesign to reduce failure risk.</div>
-        <div class="pdet"><strong>What I Did</strong>Applied fixed constraints and bearing forces. Von Mises criterion predicts yielding in ductile metals under tension/compression. Adjusted handle length and thickness to reduce stress concentrations. Next: test alternative base-plate materials and rerun simulation.</div>
+        <div class="pdet"><strong>What I Did</strong>Applied fixed constraints and bearing forces. Von Mises criterion predicts yielding in ductile metals under tension/compression. Adjusted handle length and thickness to reduce stress concentrations.</div>
         <div class="pout">Iterative redesign reduced peak stress concentrations — demonstrates full engineering design loop from model to failure to fix.</div>
       </div>
     </div>
@@ -392,10 +392,10 @@
     <div class="project-card reveal d1">
       <div class="gallery" id="g4">
         <div class="gallery-slides" id="g4s">
-          <img src="SolarIQ LabVeiw Front Panel.png">
-          <img src="SolarIQ Labview Block Panel.png">
-          <img src="SolarIQ ThinkerCad.png">
-          <img src="SolarIQ Product.jpg">
+          <div class="gallery-slide"><img src="SolarIQ LabVeiw Front Panel.png" alt="LabVIEW Front Panel"></div>
+          <div class="gallery-slide"><img src="SolarIQ Labview Block Panel.png" alt="LabVIEW Block Diagram"></div>
+          <div class="gallery-slide"><img src="SolarIQ ThinkerCad.png" alt="Tinkercad Circuit"></div>
+          <div class="gallery-slide"><img src="SolarIQ Product.jpg" alt="Physical Product"></div>
         </div>
         <button class="g-btn g-prev" onclick="gPrev('g4')">&#8592;</button>
         <button class="g-btn g-next" onclick="gNext('g4')">&#8594;</button>
@@ -415,10 +415,10 @@
     <div class="project-card reveal">
       <div class="gallery" id="g5">
         <div class="gallery-slides" id="g5s">
-          <img src="Wind Farm Context.png">
-          <img src="Wind Fram Grid Diagram.png">
-          <img src="Wind Farm Requirements.png">
-          <img src="Wind Farm Diagram.png">
+          <div class="gallery-slide"><img src="Wind Farm Context.png" alt="Context Diagram"></div>
+          <div class="gallery-slide"><img src="Wind Fram Grid Diagram.png" alt="Grid Diagram"></div>
+          <div class="gallery-slide"><img src="Wind Farm Requirements.png" alt="Requirements"></div>
+          <div class="gallery-slide"><img src="Wind Farm Diagram.png" alt="System Diagram"></div>
         </div>
         <button class="g-btn g-prev" onclick="gPrev('g5')">&#8592;</button>
         <button class="g-btn g-next" onclick="gNext('g5')">&#8594;</button>
@@ -438,11 +438,11 @@
     <div class="project-card reveal d1">
       <div class="gallery" id="g6">
         <div class="gallery-slides" id="g6s">
-          <img src="GMP_Q29tcHJlc3NHSDAx_8 2.GIF">
-          <img src="Traffic Light ThinkerCad.png">
-          <img src="Traffic Light Bread Board.png">
-          <img src="Traffic Light ThinkerCad2.png">
-          <img src="Traffic Light Code.png">
+          <div class="gallery-slide"><img src="GMP_Q29tcHJlc3NHSDAx_8 2.GIF" alt="Traffic Light Demo"></div>
+          <div class="gallery-slide"><img src="Traffic Light ThinkerCad.png" alt="Tinkercad Simulation"></div>
+          <div class="gallery-slide"><img src="Traffic Light Bread Board.png" alt="Breadboard"></div>
+          <div class="gallery-slide"><img src="Traffic Light ThinkerCad2.png" alt="Tinkercad 2"></div>
+          <div class="gallery-slide"><img src="Traffic Light Code.png" alt="Arduino Code"></div>
         </div>
         <button class="g-btn g-prev" onclick="gPrev('g6')">&#8592;</button>
         <button class="g-btn g-next" onclick="gNext('g6')">&#8594;</button>
@@ -469,21 +469,23 @@
     <div class="cap-gallery-wrap reveal">
       <div class="cap-main" id="cg">
         <div class="gallery-slides" id="cgs">
-          <img src="Squirrel Box - Dimensions .png">
-          <img src="Squirrel Box - Assembly.jpg">
-          <img src="Squirrel Box - Sodering.jpg">
-          <img src="Squirrel Box - On tree.png">
-          <img src="Squirrel Box - Sodering2.png">
+          <div class="gallery-slide"><img src="Squirrel Box - Dimensions .png" alt="Dimensions"></div>
+          <div class="gallery-slide"><img src="Squirrel Box - Assembly.jpg" alt="Assembly"></div>
+          <div class="gallery-slide"><img src="Squirrel Box - Sodering.jpg" alt="Soldering"></div>
+          <div class="gallery-slide"><img src="Squirrel Box - On tree.png" alt="Field Deployment"></div>
+          <div class="gallery-slide"><img src="Squirrel Box - Sodering2.png" alt="Soldering 2"></div>
         </div>
         <button class="g-btn g-prev" onclick="gPrev('cg')" style="opacity:1;pointer-events:all">&#8592;</button>
         <button class="g-btn g-next" onclick="gNext('cg')" style="opacity:1;pointer-events:all">&#8594;</button>
         <div class="g-dots" id="cgd"></div>
       </div>
+      <!-- Thumbnails — show first image of each slide as preview -->
       <div class="cap-thumbs" id="cgt">
-        <div class="cap-thumb on" onclick="gGoTo('cg',0)"><div class="th-ph">🔌</div></div>
-        <div class="cap-thumb" onclick="gGoTo('cg',1)"><div class="th-ph">🛠️</div></div>
-        <div class="cap-thumb" onclick="gGoTo('cg',2)"><div class="th-ph">☀️</div></div>
-        <div class="cap-thumb" onclick="gGoTo('cg',3)"><div class="th-ph">🌲</div></div>
+        <div class="cap-thumb on" onclick="gGoTo('cg',0)"><img src="Squirrel Box - Dimensions .png" alt="Dimensions"></div>
+        <div class="cap-thumb" onclick="gGoTo('cg',1)"><img src="Squirrel Box - Assembly.jpg" alt="Assembly"></div>
+        <div class="cap-thumb" onclick="gGoTo('cg',2)"><img src="Squirrel Box - Sodering.jpg" alt="Soldering"></div>
+        <div class="cap-thumb" onclick="gGoTo('cg',3)"><img src="Squirrel Box - On tree.png" alt="Field"></div>
+        <div class="cap-thumb" onclick="gGoTo('cg',4)"><img src="Squirrel Box - Sodering2.png" alt="Soldering 2"></div>
       </div>
     </div>
     <div class="cap-content reveal d1">
@@ -561,7 +563,7 @@
     </div>
     <div class="edu-col">
       <div class="edu-col-lbl">Background</div>
-      <p style="font-size:13px;color:var(--gray);line-height:1.8;font-weight:300">Student-athlete balancing a full engineering load with Division III football. First in family born in the US. Practices ethics, diversity, and inclusion in every aspect of academic and personal life.</p>
+      <p style="font-size:15px;color:var(--gray);line-height:1.8;font-weight:400">Student-athlete balancing a full engineering load with Division III football. First in family born in the US. Practices ethics, diversity, and inclusion in every aspect of academic and personal life.</p>
     </div>
   </div>
   <div class="courses-card reveal d1">
